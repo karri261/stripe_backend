@@ -3,6 +3,12 @@ const express = require('express');
 const Stripe = require('stripe');
 const cors = require('cors');
 
+app.use(cors({
+    origin: '*', 
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type']
+}));
+
 const app = express();
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY); // Sử dụng biến môi trường
 
