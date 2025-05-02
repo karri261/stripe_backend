@@ -31,7 +31,7 @@ app.post('/payment-sheet', async (req, res) => {
 
         // Tạo PaymentIntent
         const paymentIntent = await stripe.paymentIntents.create({
-            amount: 59900000, // 599.000₫ (số tiền tính bằng cent)
+            amount: 599000, // 599.000₫ (số tiền tính bằng cent)
             currency: 'vnd',
             customer: customer.id,
             automatic_payment_methods: { enabled: true },
